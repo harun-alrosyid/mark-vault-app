@@ -1,32 +1,38 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { useLanguage } from "@/components/language-provider"
-import { Mail, Shield, Zap, Lock, ImageIcon, Palette } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ImageIcon, Lock, Mail, Palette, Shield, Zap } from "lucide-react";
+import { useState } from "react";
+
+import { useLanguage } from "@/components/language-provider";
+import { Button } from "@/components/ui/button";
 
 interface LandingPageProps {
-  onGetStarted: () => void
-  onLearnMore: () => void
+  onGetStarted: () => void;
+  onLearnMore: () => void;
 }
 
-export default function LandingPage({ onGetStarted, onLearnMore }: LandingPageProps) {
-  const { t } = useLanguage()
+export default function LandingPage({
+  onGetStarted,
+  onLearnMore,
+}: LandingPageProps) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const subject = encodeURIComponent(`MarkVault Contact: ${formData.name}`)
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
-    window.location.href = `mailto:support@markvault.app?subject=${subject}&body=${body}`
-    setFormData({ name: "", email: "", message: "" })
-  }
+    e.preventDefault();
+    const subject = encodeURIComponent(`MarkVault Contact: ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:harun24896@gmail.com?subject=${subject}&body=${body}`;
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-background dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
@@ -80,8 +86,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
                 <Shield size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.protection")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.protectionDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.protection")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.protectionDesc")}
+              </p>
             </div>
 
             {/* Feature 2 */}
@@ -89,8 +99,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center mb-4">
                 <Zap size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.fast")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.fastDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.fast")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.fastDesc")}
+              </p>
             </div>
 
             {/* Feature 3 */}
@@ -98,8 +112,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center mb-4">
                 <Lock size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.secure")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.secureDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.secure")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.secureDesc")}
+              </p>
             </div>
 
             {/* Feature 4 */}
@@ -107,8 +125,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-4">
                 <ImageIcon size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.watermark")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.watermarkDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.watermark")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.watermarkDesc")}
+              </p>
             </div>
 
             {/* Feature 5 */}
@@ -116,8 +138,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
                 <Palette size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.bw")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.bwDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.bw")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.bwDesc")}
+              </p>
             </div>
 
             {/* Feature 6 */}
@@ -125,8 +151,12 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
                 <Mail size={24} className="text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{t("landing.features.multilang")}</h3>
-              <p className="text-muted-foreground">{t("landing.features.multilangDesc")}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {t("landing.features.multilang")}
+              </h3>
+              <p className="text-muted-foreground">
+                {t("landing.features.multilangDesc")}
+              </p>
             </div>
           </div>
         </div>
@@ -137,42 +167,62 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
         <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">{t("landing.details.title")}</h2>
-              <p className="text-lg text-muted-foreground mb-6">{t("landing.details.description")}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {t("landing.details.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                {t("landing.details.description")}
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 rounded-full bg-purple-500" />
                   </div>
-                  <span className="text-foreground">{t("landing.details.feature1")}</span>
+                  <span className="text-foreground">
+                    {t("landing.details.feature1")}
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 rounded-full bg-purple-500" />
                   </div>
-                  <span className="text-foreground">{t("landing.details.feature2")}</span>
+                  <span className="text-foreground">
+                    {t("landing.details.feature2")}
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 rounded-full bg-purple-500" />
                   </div>
-                  <span className="text-foreground">{t("landing.details.feature3")}</span>
+                  <span className="text-foreground">
+                    {t("landing.details.feature3")}
+                  </span>
                 </li>
               </ul>
             </div>
             <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 rounded-2xl p-8 border border-purple-500/20">
               <div className="space-y-4">
                 <div className="bg-background rounded-lg p-4 border border-border">
-                  <p className="text-sm text-muted-foreground mb-1">{t("landing.details.version")}</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {t("landing.details.version")}
+                  </p>
                   <p className="text-2xl font-bold text-foreground">v1.0.0</p>
                 </div>
                 <div className="bg-background rounded-lg p-4 border border-border">
-                  <p className="text-sm text-muted-foreground mb-1">{t("landing.details.released")}</p>
-                  <p className="text-lg font-semibold text-foreground">October 2025</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {t("landing.details.released")}
+                  </p>
+                  <p className="text-lg font-semibold text-foreground">
+                    October 2025
+                  </p>
                 </div>
                 <div className="bg-background rounded-lg p-4 border border-border">
-                  <p className="text-sm text-muted-foreground mb-1">{t("landing.details.status")}</p>
-                  <p className="text-lg font-semibold text-green-600 dark:text-green-400">Active & Maintained</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {t("landing.details.status")}
+                  </p>
+                  <p className="text-lg font-semibold text-green-600 dark:text-green-400">
+                    Active & Maintained
+                  </p>
                 </div>
               </div>
             </div>
@@ -184,41 +234,60 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
       <section className="py-20 px-4 bg-card/50 border-t border-border">
         <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t("landing.contact.title")}</h2>
-            <p className="text-lg text-muted-foreground">{t("landing.contact.subtitle")}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {t("landing.contact.title")}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {t("landing.contact.subtitle")}
+            </p>
           </div>
 
-          <form onSubmit={handleContactSubmit} className="bg-background rounded-2xl p-8 border border-border shadow-lg">
+          <form
+            onSubmit={handleContactSubmit}
+            className="bg-background rounded-2xl p-8 border border-border shadow-lg"
+          >
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">{t("landing.contact.name")}</label>
+              <label className="block text-sm font-medium text-foreground mb-2">
+                {t("landing.contact.name")}
+              </label>
               <input
                 type="text"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
                 placeholder={t("landing.contact.namePlaceholder")}
               />
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">{t("landing.contact.email")}</label>
+              <label className="block text-sm font-medium text-foreground mb-2">
+                {t("landing.contact.email")}
+              </label>
               <input
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
                 placeholder={t("landing.contact.emailPlaceholder")}
               />
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">{t("landing.contact.message")}</label>
+              <label className="block text-sm font-medium text-foreground mb-2">
+                {t("landing.contact.message")}
+              </label>
               <textarea
                 required
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 rows={5}
                 className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all resize-none"
                 placeholder={t("landing.contact.messagePlaceholder")}
@@ -242,5 +311,5 @@ export default function LandingPage({ onGetStarted, onLearnMore }: LandingPagePr
         </div>
       </footer>
     </div>
-  )
+  );
 }
