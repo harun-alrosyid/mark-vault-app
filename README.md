@@ -178,7 +178,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Support
 
-For questions, feedback, or support, please contact us through the contact form on the landing page or email harun24896@gmail.com
+For questions, feedback, or support, please contact us through the contact form on the landing page or email hello@harunalrosyid.com
 
 ---
 

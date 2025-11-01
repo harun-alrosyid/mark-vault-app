@@ -30,7 +30,7 @@ export default function LandingPage({
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:harun24896@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@harunalrosyid.com?subject=${subject}&body=${body}`;
     setFormData({ name: "", email: "", message: "" });
   };
 
