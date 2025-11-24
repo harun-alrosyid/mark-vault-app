@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { Slider } from "@/components/ui/slider"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useLanguage } from "@/components/language-provider"
+import { useEffect, useRef, useState } from "react";
+
+import { useLanguage } from "@/components/language-provider";
+import { Slider } from "@/components/ui/slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface ImageEditorProps {
   image: string
@@ -81,14 +82,26 @@ export default function ImageEditor({ image, onProcessed }: ImageEditorProps) {
         ctx.shadowOffsetX = 2
         ctx.shadowOffsetY = 2
 
-        ctx.translate(canvas.width / 2 + watermarkOffsetX, canvas.height / 2 + watermarkOffsetY)
+        ctx.translate(
+          canvas.width / 2 + watermarkOffsetX,
+          canvas.height / 2 + watermarkOffsetY
+        )
         ctx.rotate((watermarkRotation * Math.PI) / 180)
-        ctx.translate(-canvas.width / 2 - watermarkOffsetX, -canvas.height / 2 - watermarkOffsetY)
+        ctx.translate(
+          -canvas.width / 2 - watermarkOffsetX,
+          -canvas.height / 2 - watermarkOffsetY
+        )
+
+        const textWidth = ctx.measureText(watermarkText).width
+        const textHeight = watermarkSize
+
+        const stepX = textWidth + watermarkGap
+        const stepY = textHeight + watermarkGap
 
         const diagonal = Math.sqrt(canvas.width ** 2 + canvas.height ** 2)
 
-        for (let x = -diagonal; x < diagonal; x += watermarkGap) {
-          for (let y = -diagonal; y < diagonal; y += watermarkGap) {
+        for (let x = -diagonal; x < diagonal; x += stepX) {
+          for (let y = -diagonal; y < diagonal; y += stepY) {
             ctx.fillText(watermarkText, x, y)
           }
         }

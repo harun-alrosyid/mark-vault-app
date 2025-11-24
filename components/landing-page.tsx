@@ -200,20 +200,20 @@ export default function LandingPage({
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 rounded-2xl p-8 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 rounded-2xl p-8 border border-purple-500/20">
               <div className="space-y-4">
                 <div className="bg-background rounded-lg p-4 border border-border">
                   <p className="text-sm text-muted-foreground mb-1">
                     {t("landing.details.version")}
                   </p>
-                  <p className="text-2xl font-bold text-foreground">v1.0.0</p>
+                  <p className="text-2xl font-bold text-foreground">v1.0.1</p>
                 </div>
                 <div className="bg-background rounded-lg p-4 border border-border">
                   <p className="text-sm text-muted-foreground mb-1">
                     {t("landing.details.released")}
                   </p>
                   <p className="text-lg font-semibold text-foreground">
-                    October 2025
+                    24 November 2025
                   </p>
                 </div>
                 <div className="bg-background rounded-lg p-4 border border-border">
