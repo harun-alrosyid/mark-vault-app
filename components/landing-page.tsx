@@ -84,7 +84,7 @@ export default function LandingPage({
             {/* Feature 1 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
-                <Shield size={24} className="text-white" />
+                <Shield size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.protection")}
@@ -97,7 +97,7 @@ export default function LandingPage({
             {/* Feature 2 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center mb-4">
-                <Zap size={24} className="text-white" />
+                <Zap size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.fast")}
@@ -110,7 +110,7 @@ export default function LandingPage({
             {/* Feature 3 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center mb-4">
-                <Lock size={24} className="text-white" />
+                <Lock size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.secure")}
@@ -123,7 +123,7 @@ export default function LandingPage({
             {/* Feature 4 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center mb-4">
-                <ImageIcon size={24} className="text-white" />
+                <ImageIcon size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.watermark")}
@@ -136,7 +136,7 @@ export default function LandingPage({
             {/* Feature 5 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
-                <Palette size={24} className="text-white" />
+                <Palette size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.bw")}
@@ -149,7 +149,7 @@ export default function LandingPage({
             {/* Feature 6 */}
             <div className="bg-background rounded-xl p-6 border border-border hover:border-purple-500/50 transition-colors">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
-                <Mail size={24} className="text-white" />
+                <Mail size={24} className="text-white" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 {t("landing.features.multilang")}
@@ -247,10 +247,11 @@ export default function LandingPage({
             className="bg-background rounded-2xl p-8 border border-border shadow-lg"
           >
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
                 {t("landing.contact.name")}
               </label>
               <input
+                id="contact-name"
                 type="text"
                 required
                 value={formData.name}
@@ -263,10 +264,11 @@ export default function LandingPage({
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
                 {t("landing.contact.email")}
               </label>
               <input
+                id="contact-email"
                 type="email"
                 required
                 value={formData.email}
@@ -279,10 +281,11 @@ export default function LandingPage({
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-2">
                 {t("landing.contact.message")}
               </label>
               <textarea
+                id="contact-message"
                 required
                 value={formData.message}
                 onChange={(e) =>
@@ -296,6 +299,8 @@ export default function LandingPage({
 
             <Button
               type="submit"
+              title="Opens your default email client"
+              aria-label="Send Message via Email Client"
               className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white py-3 text-lg font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
             >
               {t("landing.contact.send")}

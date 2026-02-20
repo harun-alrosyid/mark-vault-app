@@ -59,6 +59,7 @@ export default function Home() {
 
             <div className="flex items-center gap-2">
               <select
+                aria-label={t("common.selectLanguage") || "Select language"}
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as any)}
                 className="px-3 py-2 rounded-lg bg-card border border-border text-foreground text-sm font-medium hover:bg-card/80 transition-colors cursor-pointer"
@@ -76,6 +77,7 @@ export default function Home() {
               <Button
                 variant="outline"
                 size="icon"
+                aria-label="Toggle theme"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="rounded-lg"
               >
@@ -133,6 +135,7 @@ export default function Home() {
             </Button>
 
             <select
+              aria-label={t("common.selectLanguage") || "Select language"}
               value={language}
               onChange={(e) => setLanguage(e.target.value as any)}
               className="px-3 py-2 rounded-lg bg-card border border-border text-foreground text-sm font-medium hover:bg-card/80 transition-colors cursor-pointer"
@@ -150,6 +153,7 @@ export default function Home() {
             <Button
               variant="outline"
               size="icon"
+              aria-label="Toggle theme"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="rounded-lg"
             >
@@ -206,7 +210,7 @@ export default function Home() {
               <div className="bg-background rounded-lg p-4 flex items-center justify-center max-h-96 md:max-h-[500px] overflow-auto border border-border">
                 <img
                   src={processedImage || "/placeholder.svg"}
-                  alt="Processed"
+                  alt="A preview of the processed image with black & white enhancements and a permanent diagonal watermark pattern."
                   className="max-w-3/4 max-h-2/4 rounded-lg"
                 />
               </div>

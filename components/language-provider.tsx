@@ -968,7 +968,7 @@ const translations = {
   },
 }
 
-export function LanguageProvider({ children }: React.ReactNode) {
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
 
   const t = (key: string): string => {

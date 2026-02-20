@@ -17,6 +17,7 @@ export default function LearnMore({ onClose }: LearnMoreProps) {
         <div className="mb-12">
           <button
             onClick={onClose}
+            aria-label="Go back"
             className="mb-6 px-4 py-2 rounded-lg bg-card border border-border hover:bg-card/80 transition-colors"
           >
             ← Back
@@ -28,7 +29,7 @@ export default function LearnMore({ onClose }: LearnMoreProps) {
         {/* Getting Started Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <BookOpen className="w-8 h-8 text-accent" />
+            <BookOpen className="w-8 h-8 text-accent" aria-hidden="true" />
             <h2 className="text-3xl font-bold">{t("learn.gettingStarted")}</h2>
           </div>
           <p className="text-lg text-muted-foreground mb-8">{t("learn.gettingStartedDesc")}</p>
@@ -50,7 +51,7 @@ export default function LearnMore({ onClose }: LearnMoreProps) {
         {/* Watermark Guide Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <Shield className="w-8 h-8 text-accent" />
+            <Shield className="w-8 h-8 text-accent" aria-hidden="true" />
             <h2 className="text-3xl font-bold">{t("learn.watermarkGuide")}</h2>
           </div>
           <p className="text-lg text-muted-foreground mb-8">{t("learn.watermarkGuideDesc")}</p>
@@ -67,7 +68,7 @@ export default function LearnMore({ onClose }: LearnMoreProps) {
         {/* B&W Conversion Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <Zap className="w-8 h-8 text-accent" />
+            <Zap className="w-8 h-8 text-accent" aria-hidden="true" />
             <h2 className="text-3xl font-bold">{t("learn.bwConversion")}</h2>
           </div>
           <p className="text-lg text-muted-foreground mb-8">{t("learn.bwConversionDesc")}</p>
@@ -84,7 +85,7 @@ export default function LearnMore({ onClose }: LearnMoreProps) {
         {/* FAQ Section */}
         <section>
           <div className="flex items-center gap-3 mb-8">
-            <HelpCircle className="w-8 h-8 text-accent" />
+            <HelpCircle className="w-8 h-8 text-accent" aria-hidden="true" />
             <h2 className="text-3xl font-bold">{t("learn.faq")}</h2>
           </div>
           <p className="text-lg text-muted-foreground mb-8">{t("learn.faqDesc")}</p>
